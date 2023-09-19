@@ -5,7 +5,7 @@ pipeline {
       stage('Install Dependencies') {
             steps {
                 // Install Node.js and Angular CLI (if not already installed)
-                sh 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+                sh 'curl -sL https://deb.nodesource.com/setup_18.x | bash -'
                 sh 'apt-get install -y nodejs'
                 sh 'npm install -g @angular/cli'
                 
