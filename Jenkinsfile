@@ -21,11 +21,11 @@ pipeline {
     }
     post {
         success {
-            sh 'cp -r /var/lib/jenkins/workspace/admintemplate /home/proz/deployment/'
+            sh 'cp -r /var/lib/jenkins/workspace/demo /home/proz/deployment/'
             
         }
         failure {
-            sh 'cp -f /var/lib/jenkins/workspace/admintemplate /home/proz/deployment/'
+            sh 'cp -f /var/lib/jenkins/workspace/demo /home/proz/deployment/'
         }
     }
 }
