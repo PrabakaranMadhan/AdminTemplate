@@ -11,7 +11,7 @@ pipeline {
                 sh 'NODE_MAJOR=20'
                 sh 'echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list'
                 sh 'sudo apt update'
-                Sh 'sudo apt install nodejs -y'
+                sh 'sudo apt install nodejs -y'
                 sh 'sudo npm install -g @angular/cli'
                 
                 // Install project dependencies
