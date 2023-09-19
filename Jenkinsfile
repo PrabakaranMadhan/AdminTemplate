@@ -4,8 +4,8 @@ pipeline {
     stages {
       stage('Install Dependencies') {
             steps {
-                sh 'sudo apt-get update'
-                sh 'sudo apt-get install -y ca-certificates curl gnupg'
+                sh 'sudo apt update'
+                sh 'sudo apt install -y ca-certificates curl gnupg'
                 sh 'sudo mkdir -p /etc/apt/keyrings'
                 sh 'curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg'
                 sh 'NODE_MAJOR=20'
