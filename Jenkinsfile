@@ -1,12 +1,26 @@
 pipeline {
     agent any
-
+  
     stages {
-        stage('Build') {
+      stage('Install Dependencies') {
             steps {
-                echo 'Building..'
+                // Install Node.js and Angular CLI (if not already installed)
+                sh 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+                sh 'apt-get install -y nodejs'
+                sh 'npm install -g @angular/cli'
+                
+                // Install project dependencies
+                sh 'npm install'
             }
         }
+
+        stage('Build') {
+            steps {
+                // Build the Angular application
+                sh 'ng build'
+            }
+        }
+        
         stage('Test') {
             steps {
                 echo 'Testing..'
