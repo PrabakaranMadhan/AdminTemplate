@@ -14,7 +14,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the Angular application
-                sh 'ng build'
+                sh 'sudo npm update'
+                sh 'sudo ng build'
             }
         }
         
